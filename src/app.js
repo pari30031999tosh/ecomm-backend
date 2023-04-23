@@ -4,6 +4,7 @@ const multer  = require('multer')
 require("dotenv").config();
 
 const userRoutes = require('./routers/users')
+const productRoutes = require('./routers/products')
 
 const app = express();
 
@@ -12,7 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 //routes
-app.use("/users", userRoutes);
+app.use("/", userRoutes);
+app.use('/products', productRoutes);
 
 
 

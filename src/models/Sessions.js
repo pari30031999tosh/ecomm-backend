@@ -5,22 +5,13 @@ const sequelize = new Sequelize('sqlite::memory:');
 
 module.exports = (sequelize, DataTypes) =>{
 
-    const users = sequelize.define('users', {
-  
-      firstname: {
-        type: DataTypes.STRING,
-        
-      },
-      lastname: {
-        type: DataTypes.STRING
-        // allowNull defaults to true
-      },
+    const Sessions = sequelize.define('Sessions', {
       email: {
         type: DataTypes.STRING
         // allowNull defaults to true
       },
-      password: {
-        type: DataTypes.STRING
+      sessionId: {
+        type: DataTypes.STRING,
       },
       createdAt: {
         type: Sequelize.DATE,
@@ -35,7 +26,7 @@ module.exports = (sequelize, DataTypes) =>{
       
     });
 
-    return users;
+    return Sessions;
 } 
 
 

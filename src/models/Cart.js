@@ -5,13 +5,13 @@ const sequelize = new Sequelize('sqlite::memory:');
 
 module.exports = (sequelize, DataTypes) =>{
 
-    const products = sequelize.define("products", {
+    const cart = sequelize.define("cart", {
   
-      name: {
+      user_id: {
         type: DataTypes.STRING,
         
       },
-      category: {
+      product_id: {
         type: DataTypes.STRING
         // allowNull defaults to true
       },
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) =>{
       
     });
 
-    return products;
+    return cart;
 } 
 
 
